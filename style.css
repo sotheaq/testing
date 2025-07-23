@@ -6,7 +6,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
-  background: #ba8080;
+  background: #ffffff;
   padding-top: 5.3rem;
 }
 header {
@@ -67,7 +67,8 @@ header i {
   font-weight: 500;
 }
 .arrow {
-  padding: 1.5rem;
+  padding: 1.4rem 2rem 1.4rem 2rem;
+  margin: 0.1rem;
 }
 .product-header {
   display: flex;
@@ -123,4 +124,48 @@ header i {
   .medium-nav {
     display: flex;
   }
+}
+
+footer {
+  box-shadow: 0 -0.2px 2px black;
+  padding: 1rem;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem 3rem;
+}
+.wrapper p {
+  font-weight: 500;
+}
+.footer-list {
+  list-style: none;
+  line-height: 1.8;
+}
+.footer-list li a {
+  text-decoration: none;
+  color: black;
+}
+address {
+  line-height: 1.8;
+}
+.media-icon {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+  padding: 1rem;
+}
+.media-icon img {
+  width: 2rem;
+  display: block;
+}
+.copyright {
+  padding-top: 1rem;
+  border-top: 1px solid black;
+  font-size: 1rem;
+  text-align: center;
+}
+section {
+  height: 100vh;
 }
