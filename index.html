@@ -23,20 +23,35 @@
   </head>
   <body>
     <header>
-      <i class="fa-solid fa-circle-half-stroke"></i>
-      <img src="images/logo.png" alt="" />
-      <i id="toggle-button" class="fa-solid fa-bars"></i>
+      <!-- <i class="mode-button fa-solid fa-circle-half-stroke"></i> -->
+      <a href="index.html"> <img src="images/logo.png" alt="logo" /></a>
+      <i id="toggle-button" class="toggle-button fa-solid fa-bars"></i>
+      <ul class="medium-nav">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="product.html">Product</a>
+        </li>
+        <li>
+          <a href="#">About Us</a>
+        </li>
+      </ul>
+      <!-- <i class="medium-mode-button fa-solid fa-circle-half-stroke"></i> -->
     </header>
     <nav class="nav-menu" id="nav-menu">
       <div class="contact"></div>
       <ul class="nav-list">
         <li class="nav-link">
           <i class="fa-solid fa-house"></i>
-          <a href="#">Home</a>
+          <a href="index.html">Home</a>
         </li>
-        <li class="nav-link" id="product-expand">
-          <i class="fa-solid fa-box-open"></i>
-          <a href="#">Product</a>
+        <li class="nav-link product-link">
+          <div class="product-header">
+            <i class="fa-solid fa-box-open"></i>
+            <a href="product.html">Product</a>
+          </div>
+          <i id="product-expand" class="arrow fa-solid fa-chevron-down"></i>
         </li>
         <ul class="sub-list" id="sub-list">
           <li class="sub-link"><a href="#">Card Reader</a></li>
@@ -56,13 +71,29 @@
 
     toggleButton.addEventListener("click", () => {
       navMenu.classList.toggle("show");
+
+      if (toggleButton.classList.contains("fa-bars")) {
+        toggleButton.classList.remove("fa-bars");
+        toggleButton.classList.add("fa-xmark");
+      } else {
+        toggleButton.classList.remove("fa-xmark");
+        toggleButton.classList.add("fa-bars");
+      }
     });
 
-    const productExpand = document.getElementById("product-expand");
+    const expandArrow = document.getElementById("product-expand");
     const subList = document.getElementById("sub-list");
 
-    productExpand.addEventListener("click", () => {
+    expandArrow.addEventListener("click", () => {
       subList.classList.toggle("show");
+
+      if (expandArrow.classList.contains("fa-chevron-down")) {
+        expandArrow.classList.remove("fa-chevron-down");
+        expandArrow.classList.add("fa-chevron-up");
+      } else {
+        expandArrow.classList.remove("fa-chevron-up");
+        expandArrow.classList.add("fa-chevron-down");
+      }
     });
   </script>
 </html>
