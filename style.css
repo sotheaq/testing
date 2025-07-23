@@ -7,6 +7,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   background: #ba8080;
+  padding-top: 5.3rem;
 }
 header {
   display: flex;
@@ -20,7 +21,9 @@ header {
   left: 0;
   background-color: white;
 }
-header img {
+
+header a img {
+  display: block;
   width: 6rem;
 }
 header i {
@@ -43,6 +46,7 @@ header i {
   min-width: 100%;
   list-style: none;
   padding: 2rem;
+  margin-top: 12px;
 }
 .nav-link {
   display: flex;
@@ -62,6 +66,17 @@ header i {
   font-size: 1.5rem;
   font-weight: 500;
 }
+.arrow {
+  padding: 1.5rem;
+}
+.product-header {
+  display: flex;
+}
+.product-link {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
 .sub-list {
   height: 0;
   list-style: none;
@@ -79,4 +94,33 @@ header i {
 .sub-list a {
   text-decoration: none;
   color: black;
+}
+/* Nav for big screen */
+.medium-nav {
+  list-style: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.medium-nav li {
+  padding: 0 1rem;
+}
+.medium-nav li:hover a {
+  color: #ff6600;
+}
+.medium-nav li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: color 0.5s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .toggle-button {
+    display: none;
+  }
+  .medium-nav {
+    display: flex;
+  }
 }
