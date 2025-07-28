@@ -135,8 +135,10 @@
       navMenu.classList.toggle("show");
       if (toggleButton.classList.contains("fa-bars")) {
         toggleButton.classList.replace("fa-bars", "fa-xmark");
+        document.body.style.overflow = "hidden";
       } else {
         toggleButton.classList.replace("fa-xmark", "fa-bars");
+        document.body.style.overflow = "";
       }
       if (!navMenu.classList.contains("show")) {
         subList.classList.remove("show");
