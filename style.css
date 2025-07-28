@@ -48,6 +48,7 @@ header i {
   list-style: none;
   padding: 2rem;
   margin-top: 12px;
+  margin-bottom: 10rem;
 }
 .nav-link {
   display: flex;
