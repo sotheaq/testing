@@ -52,8 +52,11 @@ header i {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 1.5rem 0.5rem;
   border-bottom: 1px solid black;
+}
+.nav-link:hover {
+  border-left: 4px solid #ff6600;
 }
 .nav-link i {
   font-size: 1.5rem;
@@ -61,41 +64,70 @@ header i {
 }
 .nav-link a {
   display: block;
+  width: 100%;
   text-decoration: none;
   color: Black;
   font-size: 1.5rem;
   font-weight: 500;
 }
 .arrow {
-  padding: 1.4rem 2rem 1.4rem 2rem;
+  padding: 1.4rem 2rem 1.4rem 3rem;
   margin: 0.1rem;
 }
 .product-header {
   display: flex;
+  width: 100%;
 }
 .product-link {
-  padding: 0;
+  padding: 0 0 0 0.5rem;
   display: flex;
   justify-content: space-between;
 }
 .sub-list {
-  height: 0;
+  max-height: 0;
   list-style: none;
   overflow: hidden;
-  transition: height 0.5s ease;
+  transition: max-height 0.3s ease;
   padding: 0 0 0 4rem;
 }
+
 .sub-list.show {
-  height: 175px;
+  max-height: 1000px;
 }
 .sub-link {
   border-bottom: 1px solid black;
-  padding: 1rem 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub-link:hover {
+  border-left: 4px solid #ff6600;
+  padding-left: 0.5rem;
 }
 .sub-list a {
   text-decoration: none;
   color: black;
 }
+.sub-sublist {
+  list-style: none;
+  padding-left: 3rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.sub-sublist.show {
+  max-height: 200px;
+}
+.lisub-link {
+  padding: 1rem 1rem 1rem 0.5rem;
+  border-bottom: 1px solid black;
+  transition: border-left 0.3s ease;
+}
+.lisub-link:hover {
+  border-left: 4px solid #ff6600;
+}
+
 /* Nav for big screen */
 .medium-nav {
   list-style: none;
@@ -168,4 +200,31 @@ address {
 }
 section {
   height: 100vh;
+}
+/* Product HTML */
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  gap: 1rem;
+  font-size: 1rem;
+}
+.product-card {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.product-card img {
+  width: 100%;
+}
+.btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: transparent;
+}
+.view-detail {
+  width: 100%;
+  border-color: black;
 }
