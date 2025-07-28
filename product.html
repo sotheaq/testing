@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawsome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ARES GEAR</title>
+  </head>
+  <body>
+    <header>
+      <!-- <i class="mode-button fa-solid fa-circle-half-stroke"></i> -->
+      <a href="index.html"> <img src="images/logo.png" alt="logo" /></a>
+      <i id="toggle-button" class="toggle-button fa-solid fa-bars"></i>
+      <ul class="medium-nav">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="product.html">Product</a>
+        </li>
+        <li>
+          <a href="#">About Us</a>
+        </li>
+      </ul>
+    </header>
+    <nav class="nav-menu" id="nav-menu">
+      <div class="contact"></div>
+      <ul class="nav-list">
+        <li class="nav-link">
+          <i class="fa-solid fa-house"></i>
+          <a href="index.html">Home</a>
+        </li>
+        <li class="nav-link product-link">
+          <div class="product-header">
+            <i class="fa-solid fa-box-open"></i>
+            <a href="product.html">Product</a>
+          </div>
+          <i id="product-expand" class="arrow fa-solid fa-chevron-down"></i>
+        </li>
+        <ul class="sub-list" id="sub-list">
+          <li class="sub-link">
+            <a href="#">Memory Card</a
+            ><i class="arrow-expand arrow fa-solid fa-chevron-down"></i>
+          </li>
+          <ul class="sub-sublist">
+            <li class="lisub-link"><a href="#">Micro SD Card</a></li>
+            <li class="lisub-link"><a href="#">SD Card</a></li>
+            <li class="lisub-link"><a href="#">CF Express</a></li>
+          </ul>
+          <li class="sub-link">
+            <a href="#">Keyboard</a
+            ><i class="arrow-expand arrow fa-solid fa-chevron-down"></i>
+          </li>
+          <ul class="sub-sublist">
+            <li class="lisub-link"><a href="#">Mechanical</a></li>
+            <li class="lisub-link"><a href="#">Membrane</a></li>
+            <li class="lisub-link"><a href="#">Ergonomic</a></li>
+          </ul>
+          <li class="sub-link">
+            <a href="#">Mouse</a
+            ><i class="arrow-expand arrow fa-solid fa-chevron-down"></i>
+          </li>
+          <ul class="sub-sublist">
+            <li class="lisub-link"><a href="#">Wireless Mouse</a></li>
+            <li class="lisub-link"><a href="#">Wired Mouse</a></li>
+            <li class="lisub-link"><a href="#">Bluetooth Mouse</a></li>
+          </ul>
+          <li class="sub-link">
+            <a href="#">Digital Storage</a
+            ><i class="arrow-expand arrow fa-solid fa-chevron-down"></i>
+          </li>
+          <ul class="sub-sublist">
+            <li class="lisub-link"><a href="#">USB Flash Drives </a></li>
+            <li class="lisub-link"><a href="#">Internal SSD</a></li>
+            <li class="lisub-link"><a href="#">External SSD</a></li>
+          </ul>
+          <li class="sub-link">
+            <a href="#">Accessories</a
+            ><i class="arrow-expand arrow fa-solid fa-chevron-down"></i>
+          </li>
+          <ul class="sub-sublist">
+            <li class="lisub-link"><a href="#">Charger</a></li>
+            <li class="lisub-link"><a href="#">Memory Card Holder</a></li>
+            <li class="lisub-link"><a href="#">Cables</a></li>
+          </ul>
+        </ul>
+        <li class="nav-link">
+          <i class="fa-solid fa-address-card"></i>
+          <a href="#">About Us</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="product-container" class="product-container"></div>
+    <footer>
+      <div class="wrapper">
+        <p>OUR LINKS</p>
+        <p>ADDRESS</p>
+        <ul class="footer-list">
+          <li><a href="">Home</a></li>
+          <li><a href="">Product</a></li>
+          <li><a href="">About Us</a></li>
+        </ul>
+        <address>
+          St.138, Sangkat Phsar Depou Ti Pir, Khan Toul Kork, Phom Penh
+        </address>
+      </div>
+      <div class="media-icon">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-telegram"></i>
+        <a href=""><img src="images/instagram.svg" alt="instagram icon" /></a>
+      </div>
+      <p class="copyright">© 2025 ARES GEAR. All rights reserved.</p>
+    </footer>
+  </body>
+  <script>
+    const toggleButton = document.getElementById("toggle-button");
+    const navMenu = document.getElementById("nav-menu");
+
+    toggleButton.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+      if (toggleButton.classList.contains("fa-bars")) {
+        toggleButton.classList.replace("fa-bars", "fa-xmark");
+      } else {
+        toggleButton.classList.replace("fa-xmark", "fa-bars");
+      }
+      if (!navMenu.classList.contains("show")) {
+        subList.classList.remove("show");
+        setTimeout(() => {
+          expandArrow.classList.replace("fa-chevron-up", "fa-chevron-down");
+        }, 200);
+        subsubList.forEach((item) => {
+          item.classList.remove("show");
+        });
+        subarrowExpand.forEach((arrowitem) => {
+          arrowitem.classList.remove("fa-chevron-up");
+          arrowitem.classList.add("fa-chevron-down");
+        });
+      }
+    });
+
+    const expandArrow = document.getElementById("product-expand");
+    const subList = document.getElementById("sub-list");
+
+    expandArrow.addEventListener("click", () => {
+      subList.classList.toggle("show");
+      if (subList.classList.contains("show")) {
+        expandArrow.classList.replace("fa-chevron-down", "fa-chevron-up");
+      } else {
+        expandArrow.classList.replace("fa-chevron-up", "fa-chevron-down");
+      }
+    });
+    //TEST LOGIC
+    const subarrowExpand = document.querySelectorAll(".arrow-expand");
+    const subsubList = document.querySelectorAll(".sub-sublist");
+
+    subarrowExpand.forEach((arrow, arrowIndex) => {
+      arrow.addEventListener("click", () => {
+        subsubList.forEach((sublist, listIndex) => {
+          const currentArrow = subarrowExpand[listIndex]; // get arrow matching current sublist
+
+          if (arrowIndex === listIndex) {
+            // toggle the clicked one
+            const isOpen = sublist.classList.toggle("show");
+
+            if (isOpen) {
+              currentArrow.classList.remove("fa-chevron-down");
+              currentArrow.classList.add("fa-chevron-up");
+            } else {
+              currentArrow.classList.remove("fa-chevron-up");
+              currentArrow.classList.add("fa-chevron-down");
+            }
+          } else {
+            // close others
+            sublist.classList.remove("show");
+            currentArrow.classList.remove("fa-chevron-up");
+            currentArrow.classList.add("fa-chevron-down");
+          }
+        });
+      });
+    });
+  </script>
+  <script type="module" src="script.js"></script>
+</html>
